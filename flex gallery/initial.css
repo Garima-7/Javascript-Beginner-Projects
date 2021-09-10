@@ -1,0 +1,40 @@
+.panel {
+    font-weight: bolder;
+    font-size: 30px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.panel p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    transition: all 0.5s;
+}
+
+.panels {
+    display: flex;
+    height: 100%;
+}
+
+.open_active {
+    transform: translateY(-100%);
+}
+
+.open_active_last {
+    transform: translateY(100%);
+}
+
+body {
+    margin: 0;
+}
+
+.display_end {
+    flex-grow: 5;
+    font-size: 40px;
+    transition: flex-grow 0.5s;
+}

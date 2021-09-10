@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>New Tab</title>
+</head>
+<style>
+    input[type=text] {
+        border-radius: 80px;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    
+    .shortcut:hover {
+        background-color: rgb(190, 209, 184, 0.3);
+        cursor: pointer;
+    }
+    
+    .num:hover {
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
+
+<body style="background-image: url('nature.jpg');background-repeat: no-repeat;background-size: 100%;">
+    <div class="container-fluid ">
+        <div class="row " style="display: flex;justify-content: flex-end;align-items: center;font-weight: bolder;margin-top: 10px;margin-right: 10px;">
+            <div><a class="text-white" href="#">Gmail</a></div>
+            <div><a class="text-white" href="#" style="padding-left: 15px;">Images</a></div>
+            <div class="num"><img src="google icon.png" style="width:2rem;padding-left: 15px;"></div>
+            <div class="bg-danger text-white num" style="margin-left: 15px;border: 2px solid red;padding:5px 10px;border-radius:100px;text-align: center;">
+                <a class="text-white num" href="#">G</a>
+            </div>
+        </div>
+        <div class="row" style="display: flex;justify-content: center;margin-top: 100px;">
+            <div class="col-sm-4"><img src="Google_2015_logo.png" width=100%></div>
+        </div>
+        <div class="row" style="display: flex;justify-content: center;">
+            <div class="col-sm-6" style="margin-top:20px;">
+                <form>
+                    <input type="text" style="
+                    width:100%; padding: 10px 60px 10px 60px; 
+                    background-image: url('search.png');background-repeat:no-repeat; 
+                    background-size: 20px;background-position-x: 15px; background-position-y: center;border: white;">
+                </form>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;display: flex;justify-content: center;font-weight: bolder;">
+            <a class="shortcut" style="padding: 10px;">Add shortcut</a>
+            <p id="apple"></p>
+        </div>
+
+    </div>
+</body>
+
+</html>

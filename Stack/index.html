@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+    <style>
+        li {
+            list-style-type: none;
+            border: 2px solid red;
+            width: 20%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="hello">Stack Display</h1>
+    <script>
+        var stack = new Array();
+        var size = prompt('Enter size of Stack ');
+        var topStack = -1;
+
+        function push(element) {
+            if (topStack >= size)
+                alert("Stack Overflow");
+            else {
+                topStack += 1;
+                stack[topStack] = element;
+            }
+        }
+
+        function pop() {
+            if (topStack <= -1)
+                alert("Stack Underflow");
+            else {
+                alert('Popped Element is ' + stack[topStack]);
+                topStack--;
+            }
+        }
+
+        function emptyStack() {
+            if (topStack == -1)
+                alert('Stack is Empty');
+            else
+                alert('Stack is not Empty');
+        }
+
+        function display() {
+            for (var i = topStack; i >= 0; i--) {
+                document.getElementById('hello').innerHTML += `<ul><li>${stack[i]}</li></ul>`;
+            }
+        }
+
+        do {
+            var choose = prompt('Choose one Option:\n1.push\n2.pop\n3.check wheather stack is empty\n4.display');
+            switch (choose) {
+                case '1':
+                    var s = prompt('Enter element to be pushed ');
+                    push(s);
+                    break;
+                case '2':
+                    pop();
+                    break;
+                case '3':
+                    emptyStack();
+                    break;
+                case '4':
+                    display();
+                    break;
+                default:
+                    alert('Wrong choice entered');
+            }
+        } while (choose != 4);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Nav</title>
+    <style>
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            background-color: brown;
+            padding: 10px;
+            color: white;
+            z-index: 1;
+            transition: all 0.5s;
+        }
+        
+        ul li {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        p {
+            font-size: 2em;
+        }
+        
+        li:first-child {
+            max-width: 0;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .stickysome li:first-child {
+            max-width: 500px;
+            max-height: 100%;
+            transition: all 0.5s;
+        }
+        
+        .stickysome ul {
+            position: sticky;
+            top: 0px;
+            left: 0px;
+        }
+        /* ul li img {
+            max-width: 0;
+            max-height: 0;
+            overflow: hidden;
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus doloribus pariatur perferendis vero nisi laudantium dicta facere, quia autem voluptates harum odio reprehenderit deleniti ea. Autem atque fugiat sit sapiente architecto, est exercitationem
+        molestias, dolore esse officia ullam perspiciatis, animi accusantium. Et architecto obcaecati eaque commodi accusamus quisquam dolorum quam!</p>
+    <ul style="height:20px">
+        <li><img src="logo.png" height="100%"></li>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique libero odit fuga possimus saepe error facere aperiam temporibus aspernatur, voluptate cumque illo nam est quaerat sunt delectus, minus accusantium rem asperiores illum harum suscipit
+        aliquid quasi? Nobis vel, labore nemo ad cum reiciendis at exercitationem sequi vero rerum repellendus possimus, dolorem, iste est ratione iure illo. Similique earum rerum tenetur voluptatem animi. Hic, id facere. Fuga illum velit hic quasi, asperiores
+        explicabo sunt voluptas amet, incidunt nostrum ducimus voluptatum quod impedit ab. Officiis autem veritatis velit maxime illum. Soluta dolores dolor maiores quisquam nostrum ratione ab voluptatum ullam neque vero sunt ex alias beatae molestiae
+        iure aliquid laborum nisi quia, doloribus aut quaerat repudiandae saepe. Repellendus facere earum dolorem voluptate doloremque ad quisquam alias libero similique delectus eveniet ipsum, excepturi eum possimus architecto voluptatibus modi soluta,
+        praesentium commodi exercitationem iure nemo! Dolorem, esse distinctio tempore aperiam, ullam, saepe dolorum rem iste praesentium ipsa modi optio beatae quisquam! Quod voluptatem placeat impedit at possimus quos, consectetur ratione assumenda.
+        Veniam facilis in placeat expedita quisquam optio nulla ea totam excepturi pariatur ducimus earum ex, velit beatae explicabo quia voluptates quis voluptate provident libero sed repudiandae! Temporibus quas vero assumenda vitae dicta! Sint, eum
+        ea. Ipsam possimus laborum commodi quos tenetur quas eos accusantium placeat cum numquam dolore ad repellendus, iusto impedit iure dicta repellat accusamus? Aut accusantium ducimus obcaecati atque quisquam iste earum sed. Doloremque delectus aspernatur,
+        fugiat quas nisi accusantium labore, iusto, deserunt optio dolore magnam illo voluptates minus quia. Deserunt, reiciendis repellendus? Velit tempore error consectetur maiores quia impedit harum fugiat exercitationem accusamus mollitia voluptatum
+        laudantium esse, expedita quam magnam vel nisi alias doloribus doloremque rem numquam eveniet eos perferendis. Sit, repudiandae illo, ea possimus nemo maxime veniam, voluptates rem omnis quam tenetur mollitia consequuntur hic beatae. Quod accusamus
+        alias doloribus. Quis labore eveniet at deserunt non illum adipisci quisquam impedit voluptatum molestiae sed unde minima voluptate, quae quod distinctio sit ad necessitatibus cumque dolorem perferendis animi omnis. Pariatur voluptates doloribus
+        error mollitia minima perferendis ratione laudantium itaque eum, commodi magni! Sunt nobis ipsum ducimus distinctio assumenda aliquid, ipsa optio excepturi sint dolor? Repellat eaque rem quasi aliquam doloremque odit laboriosam accusantium a ratione
+        vitae explicabo, sint totam incidunt eos, hic, tempora aspernatur nesciunt impedit culpa debitis? Consectetur nulla molestias nesciunt cupiditate adipisci rerum inventore animi et dolore quidem, laboriosam debitis commodi ipsum optio placeat eveniet
+        autem? Doloribus ut, voluptatum tenetur iusto explicabo quo magni quisquam esse ipsam at excepturi vero debitis unde pariatur id deserunt, accusantium aliquam perferendis veniam et fuga inventore? Velit atque eius praesentium eum aspernatur ipsum,
+        odio magni quaerat at est deserunt soluta quis et ratione asperiores cumque recusandae quod beatae alias, eos amet eveniet numquam? A maiores ex modi beatae dolorem qui iusto atque laboriosam numquam sapiente facilis similique adipisci soluta
+        neque, amet quod debitis, repudiandae exercitationem sint culpa at quo saepe est. Ipsum amet impedit, voluptatum, veritatis nam nisi vel modi quibusdam repellendus nulla vitae at molestias quaerat. Perferendis, architecto autem? Maxime, quae quod?</p>
+
+    <script>
+        const nav = document.querySelector('ul');
+        const topOfNav = nav.offsetTop;
+
+
+        function navSticky() {
+            if (window.scrollY >= topOfNav) {
+                document.body.style.paddingTop = nav.offsetHeight + 'px';
+                document.body.classList.add('stickysome');
+            } else {
+                document.body.style.paddingTop = 0;
+                document.body.classList.remove('stickysome');
+            }
+        }
+
+        window.addEventListener('scroll', navSticky);
+    </script>
+
+</body>
+
+</html>

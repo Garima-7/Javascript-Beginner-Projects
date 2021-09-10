@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Shadow Mouse Move Effect</title>
+</head>
+
+<body>
+    <div class="hero" style="display: flex;justify-content: center;width: 100%;height: 100%;align-items: center;background-image: linear-gradient(45deg,green,yellow);">
+        <p style="font-weight:bolder;font-size: 4em;font-family: Arial, Helvetica, sans-serif;text-shadow: -13px -13px 0 rgba(255, 0, 0, 0.829);">HELLO</p>
+    </div>
+    <script>
+        const hell = document.querySelector('.hero');
+        const ch = document.querySelector('.hero p');
+        hell.addEventListener('mousemove', textShadowMove);
+        const walk = 100;
+
+        function textShadowMove(e) {
+
+            const width = this.offsetWidth;
+            const height = this.offsetHeight;
+            let x = e.offsetX;
+            let y = e.offsetY;
+            if (this != e.target) {
+                x = x + e.target.offsetLeft;
+                y = y + e.target.offsetTop;
+            }
+
+            let walkX = Math.round((x / width * walk) - (walk / 2));
+            let walkY = Math.round((y / width * walk) - (walk / 2));
+            ch.style.textShadow = `${walkX}px ${walkY}px 0 brown, ${walkY}px ${walkX*-1}px 0 white`;
+
+        }
+    </script>
+</body>
+
+</html>

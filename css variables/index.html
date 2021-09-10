@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>CSS VARIABLES AND JS</title>
+    <style>
+         :root {
+            --blur: 10px;
+            --spacing: 10px;
+            --base: #ff0000;
+        }
+        
+        img {
+            padding: var(--spacing);
+            background-color: var(--base);
+            filter: blur(var(--blur));
+        }
+        
+        .diff {
+            color: var(--color);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center mt-2 mb-4">CSS VARIABLES AND
+        <!--here --color is given inline therefore it has higher priority than internal css.Therefore we can use css variables like this-->
+        <span class="diff" style="--base:#ffff00"> JS </span>
+    </h1>
+    <div class="d-flex justify-content-center mb-5">
+        <label for="spacing">Spacing</label>
+        <input type="range" max="100" name="spacing" min="0" value="10" data-measure="px" class="mr-4 ml-2">
+        <label for="blur">Blur</label>
+        <input type="range" max="100" name="blur" min="0" value="10" data-measure="px" class="mr-4 ml-2">
+        <label for="base">Color</label>
+        <input type="color" name="base" value="#ff0000" class="mr-4 ml-2">
+    </div>
+    <div class=" d-flex justify-content-center mt-5">
+        <img src="nature.jpg" height="400px" width="400px">
+    </div>
+    <script>
+        var inputs = document.querySelectorAll('input');
+
+        function changeImage() {
+            const suffix = this.dataset.measure || ''; // given '' because color has no dataset so we don't want it to return none for that.
+            document.documentElement.style.setProperty(`--${this.name}`, (this.value + suffix));
+        }
+
+        inputs.forEach(inp => inp.addEventListener('change', changeImage));
+        inputs.forEach(inp => inp.addEventListener('mousemove', changeImage));
+    </script>
+</body>
+
+</html>

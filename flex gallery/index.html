@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="initial.css">
+    <title>Flex Gallery</title>
+</head>
+
+<body>
+    <div class="panels">
+        <div class="panel" style="background-image: url('pic6.jpg');background-size: cover;">
+            <p>HEY</p>
+            <p>LET'S</p>
+            <p>DANCE</p>
+        </div>
+        <div class="panel" style="background-image: url('pic2.jpg');background-size: cover;">
+            <p>GIVE</p>
+            <p>TAKE</p>
+            <p>RECIEVE</p>
+        </div>
+        <div class="panel" style="background-image: url('pic3.jpg');background-size: cover;">
+            <p>EXPERIENCE</p>
+            <p>IT</p>
+            <p>TODAY</p>
+        </div>
+        <div class="panel" style="background-image: url('pic4.jpg');background-size: cover;">
+            <p>GIVE</p>
+            <p>ALL</p>
+            <p>YOU CAN</p>
+        </div>
+        <div class="panel" style="background-image: url('pic5.jpg');background-size: cover;">
+            <p>LIFE</p>
+            <p>IN </p>
+            <p>MOTION</p>
+        </div>
+    </div>
+    <script>
+        const card = document.querySelectorAll('.panel');
+        card.forEach(panel1 => {
+            const first = panel1.firstElementChild;
+            first.classList.add("open_active");
+            const last = panel1.lastElementChild;
+            last.classList.add("open_active_last");
+            panel1.addEventListener('click', () => {
+                panel1.classList.toggle('display_end');
+                first.classList.toggle('open_active');
+                last.classList.toggle("open_active_last");
+            });
+        });
+    </script>
+</body>
+
+</html>
